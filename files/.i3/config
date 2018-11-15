@@ -103,6 +103,7 @@ bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_
 
 #move workspaces from monitors
 bindsym $mod+Shift+m move workspace to output down
+#bindsym $mod+Shift+m move workspace to output left
 
 # split orientation
 bindsym $mod+Shift+v split h;exec notify-send 'tile horizontally'
