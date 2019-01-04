@@ -2,12 +2,16 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/christian/.oh-my-zsh
+export ZSH=/usr/share/oh-my-zsh/
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+#ZSH_THEME="avit"
 ZSH_THEME="agnoster"
+
+#powerline-daemon -q
+#. /usr/lib/python3.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -104,6 +108,9 @@ alias csv-format='column -t -s ,'
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/go
 
+export PATH=$PATH:/usr/local/go/bin
+
+export EDITOR=vim
 
 function set_one {
    export ONE_LOCATION=$PWD
@@ -113,3 +120,15 @@ function set_one {
 function mac-tunnel {
 	ssh -L 5900:10.153.44.94:5900 one-ofi
 }
+wd() {
+  . /home/christian/bin/wd/wd.sh
+}
+
+PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+
+function clean-one {
+	rm /var/lib/one/one.db
+	rm /var/lib/one/.one/*
+	echo oneadmin:opennebula > /var/lib/one/.one/one_auth
+}
+
