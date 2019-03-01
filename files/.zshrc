@@ -132,3 +132,6 @@ function clean-one {
 	echo oneadmin:opennebula > /var/lib/one/.one/one_auth
 }
 
+function purge-db {
+	mysql -u root -e "PURGE BINARY LOGS BEFORE NOW();"
+}
