@@ -106,9 +106,9 @@ alias xursa='kill $(pgrep sshuttle) && echo "Disconnected."'
 alias csv-format='column -t -s ,'
 #GOPATH definition
 export GOPATH=$HOME/go
-export GOROOT=/usr/local/go
+#export GOROOT=/usr/local/go
 
-export PATH=$PATH:/usr/local/go/bin
+#export PATH=$PATH:/usr/local/go/bin
 
 export EDITOR=vim
 
