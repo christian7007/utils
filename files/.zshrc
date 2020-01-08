@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/usr/share/oh-my-zsh/
+export ZSH=~/.oh-my-zsh/
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -63,7 +63,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
+  git wd
 )
 DEFAULT_USER=$USER
 source $ZSH/oh-my-zsh.sh
@@ -120,9 +120,9 @@ function set_one {
 function mac-tunnel {
 	ssh -L 5900:10.153.44.94:5900 one-ofi
 }
-wd() {
-  . /home/christian/bin/wd/wd.sh
-}
+#wd() {
+#  . /home/christian/bin/wd/wd.sh
+#}
 
 PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 
