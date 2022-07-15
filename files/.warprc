@@ -1,0 +1,15 @@
+ansible:~/ws/ansible
+competitive:~/ws/competitive
+development:~/ws/development
+docs:~/ws/docs
+Downloads:~/Downloads
+engineering:~/ws/engineering
+firecracker:~/ws/firecracker
+infra:~/ws/infra
+one-ee-tools:~/ws/one-ee-tools
+one-ee:~/ws/one-ee
+one-infra:~/ws/one-infra
+onescape:~/ws/onescape
+one:~/ws/one
+packages:~/ws/packages
+terraform-provider-opennebula:~/ws/terraform-provider-opennebula

@@ -1,0 +1,76 @@
+// vim:ts=4:sw=4:et
+{
+    // stacked split container with 3 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "stacked",
+    "percent": null,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 968,
+               "width": 1920,
+               "x": 256,
+               "y": 1528
+            },
+            "name": "Inbox - cgonzalez@opennebula.systems - OpenNebula Systems Mail",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+                "class": "^Google\\-chrome$",
+                "instance": "^mail\\.google\\.com__mail_u_0$",
+                "window_role": "^pop\\-up$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 990,
+               "width": 1920,
+               "x": 256,
+               "y": 1506
+            },
+            "name": "Browser",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+                "class": "^Google\\-chrome$",
+                "instance": "^google\\-chrome$",
+                "window_role": "^browser$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1056,
+               "width": 1920,
+               "x": 256,
+               "y": 1440
+            },
+            "name": "Slack - OpenNebula",
+            "percent": 0.333333333333333,
+            "swallows": [
+               {
+                "class": "^Slack$",
+                "instance": "^slack$",
+                "title": "^Slack\\ \\-\\ OpenNebula$",
+                "window_role": "^browser\\-window$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
