@@ -1,0 +1,9 @@
+#!/bin/sh
+
+user="christian"
+
+xrandr --output DP-2 --mode 2560x1440 --pos 0x0 --rotate left
+xrandr --output DP-1 --mode 2560x1440 --pos 1440x0 --rotate normal
+xrandr --output eDP-1 --primary --mode 1920x1080 --pos 1440x1440 --rotate normal
+
+sudo -H -u $user bash -c 'nitrogen --restore'

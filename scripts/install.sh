@@ -42,7 +42,8 @@ if [ "$AVOID_PACMAN" != "YES" ]; then
 fi
 
 if [ "$AVOID_YAY" != "YES" ]; then
-    YAY_PKGS="google-chrome"
+    YAY_PKGS="google-chrome \
+              spotify"
 
     yay -Syu "$YAY_PKGS"
 
