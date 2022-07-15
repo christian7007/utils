@@ -2,10 +2,14 @@
 
 set -e -o pipefail
 
+if [ "$AVOID_PACMAN" != "christian" ]; then
+    echo "The script must be executed as christian user"
+fi
+
 SCRIPT_PATH="$(cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P)"
 REPO_PATH="$(dirname "$SCRIPT_PATH")"
 
-while getopts p:y:i:z:c:x:n:o: flag
+while getopts p:y:i:z:c:x:n:o:v: flag
 do
     case "${flag}" in
         p) AVOID_PACMAN="YES";;
@@ -15,6 +19,7 @@ do
         c) AVOID_CMDS="YES";;
         x) AVOID_X11="YES";;
         o) AVOID_OTHERS="YES";;
+        v) AVOID_VSCODE="YES";;
         *) echo "Not supported option: ${OPTARG}" 1>&2;;
     esac
 done
@@ -28,7 +33,8 @@ if [ "$AVOID_PACMAN" != "YES" ]; then
                  terminator \
                  xclip \
                  tree \
-                 rofi"
+                 rofi \
+                 code"
 
     sudo pacman -Syu "$PACMAN_PKGS"
 
@@ -100,4 +106,12 @@ if [ "$AVOID_OTHERS" != "YES" ]; then
     ln -s "$REPO_PATH/files/.vimrc" /home/christian/.vimrc
     ln -s "$REPO_PATH/files/.warprc" /home/christian/.warprc
     ln -s "$REPO_PATH/files/.gdbinit" /home/christian/.gdbinit
+fi
+
+if [ "$AVOID_VSCODE" != "YES" ]; then
+    EXTENSIONS="code-spell-checker blame highlight-trailing-white-spaces nord-visual-studio-code shellcheck vscode-yaml"
+
+    for EXT in $EXTENSIONS; do
+        code --install-extension "$EXT"
+    done
 fi
